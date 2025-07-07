@@ -14,6 +14,7 @@ public class VNManager : MonoBehaviour
     public GameObject dialougeBox;
     public TextMeshProUGUI speakerName;
     public TextMeshProUGUI speakerContents;
+    public TypewriterEffect typewriterEffect; 
 
     private Story story;
     private string filePath = Constants.STORY_INK_PATH;
@@ -104,7 +105,7 @@ public class VNManager : MonoBehaviour
             // 顯示對話框並填入文字
             dialougeBox.SetActive(true);
             speakerName.text = speaker;
-            speakerContents.text = content;
+            typewriterEffect.StartTyping(content, 0.5f);
         }
     }
     #endregion
